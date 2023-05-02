@@ -1,0 +1,28 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.intro {
+   
+    background: url(/img/index-backgorund.png) no-repeat;
+}
+
+body {
+    min-height: 100vh;
+
+}

@@ -1,0 +1,23 @@
+﻿
+.footer {
+    font-family: 'Playfair Display';
+    margin: auto;
+    min-height: 200px;
+    background: #1E1E1E;
+    color: white;
+    width: 100%;
+}
+.footer h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav-container {
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    flex-basis: 33.33%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}

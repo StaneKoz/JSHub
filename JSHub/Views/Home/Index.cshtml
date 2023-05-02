@@ -1,0 +1,51 @@
+﻿@model JSHub.Domain.Entity.Profile;
+@{
+    Layout = "_Layout-main";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Index/index.css" />
+</head>
+<main class="main">
+    <section class="intro">
+        <div class="wrapper">
+            <h1 class="intro__title">
+                Найди то, в чем так сильно нуждаешься
+            </h1>
+            <form class="form--search" method="post">
+                <div class="form--container">
+                    <input class="input--search" type="search" />
+                    <div class="button--icon--container">
+                        <button class="button--icon"><img src="~/img/icon-filter.png" /></button>
+                        <button class="button--icon" type="submit"><img src="~/img/icon-search.png" /></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="for--clients">
+        <div class="for--clients__wraper">
+            <h2 class="for--clients__title">Для клиентов</h2>
+            <div class="for--clients__cards">
+                <div class="for--clients__card"></div>
+                <div class="for--clients__card"></div>
+                <div class="for--clients__card"></div>
+            </div>
+            <div class="carousel">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+    </section>
+    <section class="information">
+        <div class="information__wrapper">
+            <h2 class="information__title">
+                Информация о сайте
+            </h2>
+            <div class="information__cards">
+                <div class="information__card"></div>
+                <div class="information__card"></div>
+            </div>
+        </div>
+    </section>
+</main>

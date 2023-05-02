@@ -1,0 +1,13 @@
+﻿@model JSHub.Domain.ViewModels.Profile.ProfileViewModel;
+@{
+    Layout = "_Layout-main";
+}
+
+<h3>Данные пользователя</h3>
+<ul>
+    <li>Имя: @Model.FirstName</li>
+    <li>Фамилия: @Model.LastName ?? Пусто</li>
+    <li>Возраст: @Model.Age</li>
+    <li>Обо мне: @Model.AboutMe</li>
+    <li>Номер телефона: @Model.PhoneNumber</li>
+</ul>
