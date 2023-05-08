@@ -35,7 +35,7 @@ namespace JSHub.Dal.Repositories
             return false; ;
         }
 
-        public Profile Get(int id)
+        public Profile Get(long id)
         {
             return _dbContext.Profiles.FirstOrDefault(u => u.Id == id);
         }

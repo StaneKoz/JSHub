@@ -16,17 +16,13 @@ namespace JSHub.Domain.ViewModels.Profile
         [Required]
         public string LastName { get; set; }
 
-/*        [Required]
-        public List<Speciality> Speciality { get; set; }*/
-
         [Required]
         [RegularExpression("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$",
             ErrorMessage = "Неверный формат номера телефона")]
         public string PhoneNumber { get; set; }
-        [Required]
-        public string Speciality { get; set; }
-
-        public string AboutMe { get; set; }
-        public Speciality EnumSpeciality { get; set; }
+        public Employment? Employment { get; set; }
+        public string? Email { get; set; }
+        public string? AboutMe { get; set; }
+        public string? Experience { get; set; }
     }
 }

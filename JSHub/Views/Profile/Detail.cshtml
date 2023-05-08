@@ -1,13 +1,69 @@
 ﻿@model JSHub.Domain.ViewModels.Profile.ProfileViewModel;
+
 @{
-    Layout = "_Layout-main";
+    var experience = Model.Experience;
+    var aboutMe = Model.AboutMe;
 }
 
-<h3>Данные пользователя</h3>
-<ul>
-    <li>Имя: @Model.FirstName</li>
-    <li>Фамилия: @Model.LastName ?? Пусто</li>
-    <li>Возраст: @Model.Age</li>
-    <li>Обо мне: @Model.AboutMe</li>
-    <li>Номер телефона: @Model.PhoneNumber</li>
-</ul>
+@section Links {
+    <link rel="stylesheet" href="~/css/Profile/Detail.css" />
+}
+
+<section class="main-info">
+    <div class="main-info_container">
+        <div class="main-info_item first">
+            <div class="item_info avatar">
+                <img src="~/img/avatar-default.png"/>
+            </div>
+            <div class="item_info">
+                <ul class="item_info-list">
+                    <li>@Model.FirstName @Model.LastName</li>
+                    <li><span class="name-field">Возраст:</span> @Model.Age</li>
+                    <li><span class="name-field">Занятость:</span> @Model.Employment</li>
+                    <li><span class="name-field">Специальности:</span></li>
+                </ul>
+            </div>
+            <div class="item_info">
+                <div class="contact">
+                    Номер телефона: @Model.PhoneNumber
+                </div>
+            </div>
+            <div class="button-update">
+                <a asp-action="Update" asp-controller="Profile">Изменить данные профиля</a>
+            </div>
+        </div>
+        <div class="main-info_item projects">
+            Пока что пусто
+        </div>
+    </div>
+</section>
+<section class="about-me">
+    <div class="about-me_container">
+        <div class="about-me_item">
+            <h2 class="item_title">О себе</h2>
+            <div class="item_content">
+                @if (aboutMe == null)
+                {
+                    <p class="empty-content">Здесь почему-то пусто...</p>
+                }
+                else
+                {
+                    <p>@aboutMe</p>
+                }
+            </div>
+        </div>
+        <div class="about-me_item">
+            <h2 class="item_title">Опыт работы</h2>
+            <div class="item_content">
+                @if(experience == null)
+                {
+                    <p class="empty-content">Здесь почему-то пусто...</p>
+                }
+                else
+                {
+                    <p>@experience</p>
+                }
+            </div>
+        </div>
+    </div>
+</section>

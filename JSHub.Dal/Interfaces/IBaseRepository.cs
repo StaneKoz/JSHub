@@ -6,7 +6,7 @@ namespace JSHub.Dal.Interfaces
     {
         bool Create(T entity);
 
-        T Get(int id);
+        T Get(long id);
 
         IEnumerable<T> GetAll();
 

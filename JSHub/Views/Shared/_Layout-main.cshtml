@@ -15,79 +15,80 @@
     <link rel="stylesheet" href="~/css/footer.css" />
     <link rel="stylesheet" href="~/css/Main Layout/base.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Links", false);
 </head>
 <body>
-        <div class="padding-container">
-            <header class="header">
-                <div class="wrapper wrapper--header">
-                    <div class="header__container">
-                        <a asp-controller="Home" asp-action="Index" class="logo">JSHub</a>
-                        <nav class="nav header__nav">
-                            <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a asp-controller="" asp-action="" class="nav__link">Работники</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a asp-controller="Account" asp-action="Register" class="nav__link">Работа</a>
-                                </li>
+    <div class="padding-container">
+        <header class="header">
+            <div class="wrapper wrapper--header">
+                <div class="header__container">
+                    <a asp-controller="Home" asp-action="Index" class="logo">JSHub</a>
+                    <nav class="nav header__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a asp-controller="" asp-action="" class="nav__link">Работники</a>
+                            </li>
+                            <li class="nav__item">
+                                <a asp-controller="Account" asp-action="Register" class="nav__link">Работа</a>
+                            </li>
                             @{
                                 if (!User.Identity.IsAuthenticated)
                                 {
-                                                <li class="nav__item">
-                                                    <a asp-controller="Account" asp-action="Login" class="nav__link">Вход</a>
-                                                </li>
-                                                <li class="nav__item">
-                                                    <a asp-controller="Account" asp-action="Register" class="nav__link">Регистрация</a>
-                                                </li>
+                                    <li class="nav__item">
+                                        <a asp-controller="Account" asp-action="Login" class="nav__link">Вход</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a asp-controller="Account" asp-action="Register" class="nav__link">Регистрация</a>
+                                    </li>
                                 }
                                 else
                                 {
-                                                <li class="nav__item" id="1">
-                                                    <a asp-controller="" asp-action="" class="nav__link nav__link--drop">Аккаунт</a>
-                                                    <ul class="nav__list nav__list--dropdown dropdown-list">
-                                                        <li class="dropdown-list__item mobile-back">
-                                                            <a href="#" class="dropdown-list__link mobile-back__link">Назад</a>
-                                                        </li>
-                                                        <li class="dropdown-list__item">
-                                                            <a asp-data="@User.Identity." asp-controller="Profile" asp-action="Detail" class="dropdown-list__link">Профиль</a>
-                                                        </li>
-                                                        <li class="dropdown-list__item">
-                                                            <a asp-controller="Account" asp-action="Logout" class="dropdown-list__link">Выйти</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                    <li class="nav__item" id="1">
+                                        <a asp-controller="" asp-action="" class="nav__link nav__link--drop">Аккаунт</a>
+                                        <ul class="nav__list nav__list--dropdown dropdown-list">
+                                            <li class="dropdown-list__item mobile-back">
+                                                <a href="#" class="dropdown-list__link mobile-back__link">Назад</a>
+                                            </li>
+                                            <li class="dropdown-list__item">
+                                                <a asp-data="@User.Identity." asp-controller="Profile" asp-action="Detail" class="dropdown-list__link">Профиль</a>
+                                            </li>
+                                            <li class="dropdown-list__item">
+                                                <a asp-controller="Account" asp-action="Logout" class="dropdown-list__link">Выйти</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 }
                             }
-                            </ul>
-                        </nav>
-                        <button class="burger" aria-label="Открыть меню">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </header>
-        @RenderBody()
-        </div>
-        <footer class="footer">
-            <div class="nav-container">
-                <div class="nav-item">
-                    <ul>
-                        <h3>Контакты</h3>
-                    </ul>
-                </div>
-                <div class="nav-item">
-                    <ul>
-                        <h3>Иные ссылки на информацию</h3>
-                    </ul>
-                </div>
-                <div class="nav-item">
-                    <ul>
-                        <h3>Ссылки</h3>
-                    </ul>
+                        </ul>
+                    </nav>
+                    <button class="burger" aria-label="Открыть меню">
+                        <span></span>
+                    </button>
                 </div>
             </div>
-        </footer>
-        <script src="~/js/header-menu-burger-sript.js"></script>
+        </header>
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="nav-container">
+            <div class="nav-item">
+                <ul>
+                    <h3>Контакты</h3>
+                </ul>
+            </div>
+            <div class="nav-item">
+                <ul>
+                    <h3>Иные ссылки на информацию</h3>
+                </ul>
+            </div>
+            <div class="nav-item">
+                <ul>
+                    <h3>Ссылки</h3>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/header-menu-burger-sript.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

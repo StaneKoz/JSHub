@@ -1,5 +1,6 @@
 ﻿
 using JSHub.Dal;
+using JSHub.Dal.Interfaces;
 using JSHub.Domain.Entity;
 using JSHub.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -13,20 +14,16 @@ namespace JSHub.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly DbContextOptions<AppDBContext> options;
+        private readonly IBaseRepository<User> _userRepository;
 
-        public HomeController(ILogger<HomeController> logger, DbContextOptions<AppDBContext> options)
+        public HomeController(IBaseRepository<User> userRepository, ILogger<HomeController> logger, DbContextOptions<AppDBContext> options)
         {
             this.options = options;
+            _userRepository = userRepository;
         }
 
         public IActionResult Index()
         {
-    /*        using (var db = new AppDBContext(options))
-            {
-                var user = new User { Email = "sas@mail.ru", Password = "123" };
-                db.Users.Add(user);
-                db.SaveChanges();
-            }*/
             return View();
         }
 
@@ -35,6 +32,7 @@ namespace JSHub.Controllers
             return View();
         }
 
+        public IActionResult BadRequest() => View();
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

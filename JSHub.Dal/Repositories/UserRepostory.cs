@@ -30,7 +30,7 @@ namespace JSHub.Dal.Repositories
             return false;
         }
 
-        public User Get(int id)
+        public User Get(long id)
         {
             return _dbContext.Users.FirstOrDefault(u => u.Id == id);
         }

@@ -8,7 +8,8 @@ namespace JSHub.Service.Interfaces
 {
     public interface IProfileService
     {
-        BaseResponse<ProfileViewModel> GetProfile(string id);
+        BaseResponse<ProfileViewModel> GetProfile(long id);
         BaseResponse<ProfileViewModel> CreateProfile(ProfileViewModel model, long userId);
+        BaseResponse<ProfileViewModel> UpdateProfile(ProfileViewModel model, long userId);
     }
 }

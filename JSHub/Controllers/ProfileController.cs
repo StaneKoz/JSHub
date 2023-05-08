@@ -1,4 +1,5 @@
 ﻿
+using Azure;
 using JSHub.Domain.ViewModels.Profile;
 using JSHub.Service.Implementations;
 using JSHub.Service.Interfaces;
@@ -16,7 +17,12 @@ namespace JSHub.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create() => View();
+        public IActionResult Create()
+        {
+/*            if (_profileService.GetProfile(long.Parse(User.Identity.Name)) != null) 
+                return RedirectToAction("BadRequest", "Home");*/
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Create(ProfileViewModel model)
@@ -33,7 +39,7 @@ namespace JSHub.Controllers
 
         public IActionResult Detail() // Хочу айди
         {
-            var response = _profileService.GetProfile(User.Identity.Name);
+            var response = _profileService.GetProfile(long.Parse(User.Identity.Name));
             if (response.StatusCode == JSHub.Domain.Enum.StatusCode.OK)
             {
                 return View(response.Data);
@@ -43,6 +49,32 @@ namespace JSHub.Controllers
                 return RedirectToAction("Create", "Profile");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Update()
+        {
+            var profile = _profileService.GetProfile(long.Parse(User.Identity.Name));
+            if (profile != null)
+            {
+                return View(profile.Data);
+            }
+            return RedirectToAction("Create", "Profile");
+        }
+        [HttpPost]
+        public IActionResult Update(ProfileViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _profileService.UpdateProfile(model, long.Parse(User.Identity.Name));
+                if (response.StatusCode == JSHub.Domain.Enum.StatusCode.OK)
+                {
+                    ViewBag.Status = "Изменения сохранены";
+                    return View(response.Data);
+                }
+                return View(model);
+            }
+            return View(model);
         }
     }
 }

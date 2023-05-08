@@ -1,4 +1,5 @@
 ﻿
+using JSHub.Dal;
 using JSHub.Dal.Interfaces;
 using JSHub.Domain.Entity;
 using JSHub.Domain.Enum;
@@ -11,20 +12,20 @@ namespace JSHub.Service.Implementations
 {
     public class ProfileService : IProfileService
     {
-        private readonly IBaseRepository<Profile> _profileRepository;
+        private readonly AppDBContext _dbContext;
         private readonly ILogger<ProfileService> _logger;
-        public ProfileService(IBaseRepository<Profile> profileRepository, ILogger<ProfileService> logger)
+
+        public ProfileService(AppDBContext dbContext, ILogger<ProfileService> logger)
         {
-            _profileRepository = profileRepository;
+            _dbContext = dbContext;
             _logger = logger;
         }
 
-        public BaseResponse<ProfileViewModel> GetProfile(string userId)
+        public BaseResponse<ProfileViewModel> GetProfile(long userId)
         {
             try
             {
-                var userIdAsNumber = long.Parse(userId);
-                var profile = _profileRepository.GetAll().FirstOrDefault(p => p.UserId == userIdAsNumber);
+                var profile = _dbContext.Profiles.FirstOrDefault(p => p.UserId == userId);
                 if (profile == null) return new BaseResponse<ProfileViewModel>()
                 {
                     StatusCode = StatusCode.ProfileNotFound   
@@ -36,7 +37,9 @@ namespace JSHub.Service.Implementations
                     PhoneNumber = profile.PhoneNumber,
                     AboutMe = profile.AboutMe,
                     Age = profile.Age,
-                    Speciality = profile.Speciality,
+                    // Костыль. Исправить
+                    Email = _dbContext.Users.FirstOrDefault(u => u.Id == userId).Email,
+                    Experience = profile.Experience,
                 };
                 return new BaseResponse<ProfileViewModel>()
                 {
@@ -65,10 +68,11 @@ namespace JSHub.Service.Implementations
                     PhoneNumber = model.PhoneNumber,
                     AboutMe = model.AboutMe,
                     Age = model.Age,
-                    UserId = userId,
-                    Speciality = model.Speciality,
+                    Experience = model.Experience,
                 };
-                _profileRepository.Create(profile);
+                var user = _dbContext.Users.FirstOrDefault(u => u.Id == userId);
+                user.Profile = profile;
+                _dbContext.SaveChanges();
                 return new BaseResponse<ProfileViewModel>()
                 {
                     Data = model,
@@ -84,6 +88,34 @@ namespace JSHub.Service.Implementations
                     StatusCode = StatusCode.InternalServerError
                 };
             }
+        }
+
+        public BaseResponse<ProfileViewModel> UpdateProfile(ProfileViewModel model, long userId)
+        {
+            try
+            {
+                var oldProfile = _dbContext.Profiles.FirstOrDefault(u => u.Id == userId);
+                oldProfile.FirstName = model.FirstName;
+                oldProfile.LastName = model.LastName;
+                oldProfile.PhoneNumber = model.PhoneNumber;
+                oldProfile.AboutMe = model.AboutMe;
+                oldProfile.Employment = model.Employment;
+                oldProfile.Age = model.Age;
+                oldProfile.Experience = model.Experience;
+                _dbContext.SaveChanges();
+                return new BaseResponse<ProfileViewModel>()
+                {
+                    Data = model,
+                    StatusCode = StatusCode.OK
+                };
+            }
+            catch
+            {
+                return new BaseResponse<ProfileViewModel>()
+                {
+                    StatusCode = StatusCode.InternalServerError,
+                };                
+            };
         }
     }
 }
