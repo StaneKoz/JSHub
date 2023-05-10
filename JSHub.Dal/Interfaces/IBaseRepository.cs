@@ -1,6 +1,5 @@
-﻿using JSHub.Domain.Entity;
-
-namespace JSHub.Dal.Interfaces
+﻿
+namespace Portfolio.Dal.Interfaces
 {
     public interface IBaseRepository<T>
     {

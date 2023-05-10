@@ -1,4 +1,4 @@
-﻿using JSHub.Domain.Entity;
+﻿using Portfolio.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JSHub.Dal.ETG
+namespace Portfolio.Dal.ETG
 {
     public class ProfileEntityTypeConfiguration : IEntityTypeConfiguration<Profile>
     {
@@ -16,10 +16,13 @@ namespace JSHub.Dal.ETG
             builder.ToTable("Profiles").HasKey(u => u.Id);
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-
+            // у профиля есть множество проектов
             builder.HasMany(p => p.Projects)
+            // у проекта есть только один профиль
                 .WithOne(p => p.Profile)
+            // внешний ключ проекта
                 .HasForeignKey(p => p.ProfileId)
+            // главный ключ в сущности профиля
                 .HasPrincipalKey(p => p.Id);
 
             builder.HasMany(p => p.Specializations)

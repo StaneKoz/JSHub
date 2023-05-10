@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JSHub.Dal\JSHub.Dal.csproj" />
-    <ProjectReference Include="..\JSHub.Domain\JSHub.Domain.csproj" />
+    <ProjectReference Include="..\JSHub.Dal\Portfolio.Dal.csproj" />
+    <ProjectReference Include="..\JSHub.Domain\Portfolio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

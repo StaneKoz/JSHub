@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace JSHub.Dal.Migrations
+namespace Portfolio.Dal.Migrations
 {
     /// <inheritdoc />
     public partial class change9 : Migration

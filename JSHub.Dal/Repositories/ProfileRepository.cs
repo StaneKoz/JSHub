@@ -1,12 +1,12 @@
-﻿using JSHub.Dal.Interfaces;
-using JSHub.Domain.Entity;
+﻿using Portfolio.Dal.Interfaces;
+using Portfolio.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JSHub.Dal.Repositories
+namespace Portfolio.Dal.Repositories
 {
     public class ProfileRepository : IBaseRepository<Profile>
     {

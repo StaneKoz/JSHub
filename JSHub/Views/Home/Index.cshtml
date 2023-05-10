@@ -1,34 +1,30 @@
-﻿@model JSHub.Domain.Entity.Profile;
+﻿@model Portfolio.Domain.Entity.Profile;
 @{
+    ViewData["Title"] = "Home";
     Layout = "_Layout-main";
 }
-<head>
+@section Links {
     <link rel="stylesheet" href="~/css/Index/index.css" />
-</head>
+    <link rel="stylesheet" href="~/css/Main Layout/white.css" />
+}
 <main class="main">
     <section class="intro">
-        <div class="wrapper">
-            <h1 class="intro__title">
-                Найди то, в чем так сильно нуждаешься
-            </h1>
-            <form class="form--search" method="post">
-                <div class="form--container">
-                    <input class="input--search" type="search" />
-                    <div class="button--icon--container">
-                        <button class="button--icon"><img src="~/img/icon-filter.png" /></button>
-                        <button class="button--icon" type="submit"><img src="~/img/icon-search.png" /></button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <h2 class="intro_title">Найди то, в чём так сильно нуждаешься</h2>
     </section>
     <section class="for--clients">
         <div class="for--clients__wraper">
             <h2 class="for--clients__title">Для клиентов</h2>
             <div class="for--clients__cards">
-                <div class="for--clients__card"></div>
-                <div class="for--clients__card"></div>
-                <div class="for--clients__card"></div>
+                <div class="for--clients__card"><p></p></div>
+                <div class="for--clients__card">
+                    <p>
+                    Art Avenue
+                    Веб-сервис для размещения полртфолио.
+
+                    Веб-портфолио — это электронный архив ваших работ и достижений, которые могут помочь вам продвинуться в карьере или в поиске работы.
+                    </p>
+                </div>
+                <div class="for--clients__card"><p></p></div>
             </div>
             <div class="carousel">
                 <div class="point"></div>
@@ -43,8 +39,24 @@
                 Информация о сайте
             </h2>
             <div class="information__cards">
-                <div class="information__card"></div>
-                <div class="information__card"></div>
+                <div class="information__card">
+                    <div class="information__card_image">
+                        <img src="~/img/site-info-1.png"/>
+                    </div>
+                    <div class="information__card_content">
+                        Люди творческой профессии смогут оставлять свои работы,
+                        делиться своим опытом, а также искать себе заказы на работу.
+                    </div>
+                </div>
+                <div class="information__card">
+                    <div class="information__card_image">
+                        <img src="~/img/site-info-2.png"/>
+                    </div>
+                    <div class="information__card_content">
+                        Веб-портфолио  может быть использовано во время поиска работы, чтобы привлечь внимание работодателей,
+                        или во время мониторинга карьерного прогресса, чтобы отслеживать свои лучшие работы в течение времени. 
+                    </div>
+                </div>
             </div>
         </div>
     </section>

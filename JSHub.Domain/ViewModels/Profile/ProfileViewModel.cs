@@ -1,8 +1,8 @@
-﻿using JSHub.Domain.Enum;
+﻿using Portfolio.Domain.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JSHub.Domain.ViewModels.Profile
+namespace Portfolio.Domain.ViewModels.Profile
 {
     public class ProfileViewModel
     {

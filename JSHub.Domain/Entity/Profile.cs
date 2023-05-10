@@ -1,9 +1,9 @@
-﻿using JSHub.Domain.Enum;
+﻿using Portfolio.Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JSHub.Domain.Entity
+namespace Portfolio.Domain.Entity
 {
     public class Profile
     {

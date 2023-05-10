@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - JSHub</title>
+    <title>@ViewData["Title"]</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,24 +12,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/Normalize.css" />
     <link rel="stylesheet" href="~/css/Main Layout/menu.css" />
-    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/Main Layout/footer.css" />
     <link rel="stylesheet" href="~/css/Main Layout/base.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    @RenderSection("Links", false);
+    @*false указывает на то, что секция не обязательна*@
+    @RenderSection("Links", false)
 </head>
 <body>
     <div class="padding-container">
-        <header class="header">
+        <header class="header header-white header-gray">
             <div class="wrapper wrapper--header">
                 <div class="header__container">
-                    <a asp-controller="Home" asp-action="Index" class="logo">JSHub</a>
+                    <a asp-controller="Home" asp-action="Index" class="logo">Art Avenue</a>
                     <nav class="nav header__nav">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a asp-controller="" asp-action="" class="nav__link">Работники</a>
+                                <a asp-controller="" asp-action="" class="nav__link">О нас</a>
                             </li>
                             <li class="nav__item">
-                                <a asp-controller="Account" asp-action="Register" class="nav__link">Работа</a>
+                                <a asp-controller="Account" asp-action="Register" class="nav__link">Работники</a>
+                            </li>
+                            <li class="nav__item">
+                                <a asp-controller="Account" asp-action="Register" class="nav__link">Вакансии</a>
                             </li>
                             @{
                                 if (!User.Identity.IsAuthenticated)
@@ -43,48 +47,44 @@
                                 }
                                 else
                                 {
-                                    <li class="nav__item" id="1">
-                                        <a asp-controller="" asp-action="" class="nav__link nav__link--drop">Аккаунт</a>
-                                        <ul class="nav__list nav__list--dropdown dropdown-list">
-                                            <li class="dropdown-list__item mobile-back">
-                                                <a href="#" class="dropdown-list__link mobile-back__link">Назад</a>
-                                            </li>
-                                            <li class="dropdown-list__item">
-                                                <a asp-data="@User.Identity." asp-controller="Profile" asp-action="Detail" class="dropdown-list__link">Профиль</a>
-                                            </li>
-                                            <li class="dropdown-list__item">
-                                                <a asp-controller="Account" asp-action="Logout" class="dropdown-list__link">Выйти</a>
-                                            </li>
-                                        </ul>
+                                    <li class="nav__item">
+                                        <a asp-controller="Profile" asp-action="Detail" class=" nav__link"><img src="/img/profile-icon.png" /></a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a asp-controller="Account" asp-action="Logout" class=" nav__link"><img src="/img/leave-icon.png" /></a>
                                     </li>
                                 }
                             }
                         </ul>
                     </nav>
-                    <button class="burger" aria-label="Открыть меню">
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </header>
         @RenderBody()
     </div>
     <footer class="footer">
-        <div class="nav-container">
-            <div class="nav-item">
-                <ul>
-                    <h3>Контакты</h3>
-                </ul>
+        <div class="footer_container">
+            <div class="footer_item">
+                <div class="footer_item_nav-item">
+                    <a asp-controller="" asp-action="">Для клиентов</a>
+                </div>
+                <div class="footer_item_nav-item">
+                    <a asp-controller="" asp-action="">О нас</a>
+                </div>
             </div>
-            <div class="nav-item">
-                <ul>
-                    <h3>Иные ссылки на информацию</h3>
-                </ul>
-            </div>
-            <div class="nav-item">
-                <ul>
-                    <h3>Ссылки</h3>
-                </ul>
+            <div class="footer_item">
+                <div class="footer_item_nav-item">
+                    <a asp-controller="" asp-action="">Ссылки</a>
+                </div>
+                <div class="footer_item_nav-item">
+                    <ul class="nav-item_social">
+                        <li class="social-r"><a asp-controller="" asp-action=""><img src="~/img/r-icon.svg"/></a></li>
+                        <li class="social-facebook"><a asp-controller="" asp-action=""><img src="~/img/facebook-icon.svg" /></a></li>
+                        <li class="social-tiktok"><a asp-controller="" asp-action=""><img src="~/img/tiktok-icon.svg" /></a></li>
+                        <li class="social-twitter"><a asp-controller="" asp-action=""><img src="~/img/twitter-icon.svg" /></a></li>
+                        <li class="social-instagram"><a asp-controller="" asp-action=""><img src="~/img/instagram-icon.svg" /></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>

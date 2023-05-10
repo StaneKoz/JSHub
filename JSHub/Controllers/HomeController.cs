@@ -1,14 +1,13 @@
 ﻿
-using JSHub.Dal;
-using JSHub.Dal.Interfaces;
-using JSHub.Domain.Entity;
-using JSHub.Models;
+using Portfolio.Dal;
+using Portfolio.Dal.Interfaces;
+using Portfolio.Domain.Entity;
+using Portfolio.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
 using System.Diagnostics;
 
-namespace JSHub.Controllers
+namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,6 +19,16 @@ namespace JSHub.Controllers
         {
             this.options = options;
             _userRepository = userRepository;
+        }
+        
+        public IActionResult GetFiles()
+        {
+            return View();
+        }
+
+        public IActionResult GetStatusCode()
+        {
+            return BadRequest();  
         }
 
         public IActionResult Index()

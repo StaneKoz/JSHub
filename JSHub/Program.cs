@@ -1,9 +1,9 @@
-using JSHub.Dal;
-using JSHub.Dal.Interfaces;
-using JSHub.Dal.Repositories;
-using JSHub.Domain.Entity;
-using JSHub.Service.Implementations;
-using JSHub.Service.Interfaces;
+using Portfolio.Dal;
+using Portfolio.Dal.Interfaces;
+using Portfolio.Dal.Repositories;
+using Portfolio.Domain.Entity;
+using Portfolio.Service.Implementations;
+using Portfolio.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 

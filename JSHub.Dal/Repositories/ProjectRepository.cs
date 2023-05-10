@@ -1,7 +1,7 @@
-﻿using JSHub.Dal.Interfaces;
-using JSHub.Domain.Entity;
+﻿using Portfolio.Dal.Interfaces;
+using Portfolio.Domain.Entity;
 
-namespace JSHub.Dal.Repositories
+namespace Portfolio.Dal.Repositories
 {
     public class ProjectRepository : IBaseRepository<Project>
     {

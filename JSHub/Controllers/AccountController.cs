@@ -1,11 +1,11 @@
-﻿using JSHub.Domain.ViewModels.Account;
-using JSHub.Service.Interfaces;
+﻿using Portfolio.Domain.ViewModels.Account;
+using Portfolio.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace JSHub.Controllers
+namespace Portfolio.Controllers
 {
     public class AccountController : Controller
     {
@@ -46,7 +46,7 @@ namespace JSHub.Controllers
             if (ModelState.IsValid) 
             {
                 var response = _accountService.Login(model);
-                if (response.StatusCode == JSHub.Domain.Enum.StatusCode.OK)
+                if (response.StatusCode == Portfolio.Domain.Enum.StatusCode.OK)
                 {
                     HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(response.Data));

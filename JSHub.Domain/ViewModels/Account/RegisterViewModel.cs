@@ -1,8 +1,7 @@
-﻿
-using JSHub.Domain.Entity;
+﻿using Portfolio.Domain.Entity;
 using System.ComponentModel.DataAnnotations;
 
-namespace JSHub.Domain.ViewModels.Account
+namespace Portfolio.Domain.ViewModels.Account
 {
     public class RegisterViewModel
     {

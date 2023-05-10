@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JSHub.Domain.Enum
+namespace Portfolio.Domain.Enum
 {
     public enum Employment
     {

@@ -1,10 +1,10 @@
-﻿using JSHub.Domain.Entity;
-using JSHub.Domain.Response;
-using JSHub.Domain.ViewModels.Account;
-using JSHub.Domain.ViewModels.Profile;
+﻿using Portfolio.Domain.Entity;
+using Portfolio.Domain.Response;
+using Portfolio.Domain.ViewModels.Account;
+using Portfolio.Domain.ViewModels.Profile;
 using System.Security.Claims;
 
-namespace JSHub.Service.Interfaces
+namespace Portfolio.Service.Interfaces
 {
     public interface IProfileService
     {

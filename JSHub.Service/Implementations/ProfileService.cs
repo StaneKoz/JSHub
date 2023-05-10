@@ -1,14 +1,13 @@
-﻿
-using JSHub.Dal;
-using JSHub.Dal.Interfaces;
-using JSHub.Domain.Entity;
-using JSHub.Domain.Enum;
-using JSHub.Domain.Response;
-using JSHub.Domain.ViewModels.Profile;
-using JSHub.Service.Interfaces;
+﻿using Portfolio.Dal;
+using Portfolio.Domain.Entity;
+using Portfolio.Domain.Enum;
+using Portfolio.Domain.Response;
+using Portfolio.Domain.ViewModels.Profile;
+using Portfolio.Service.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace JSHub.Service.Implementations
+namespace Portfolio.Service.Implementations
 {
     public class ProfileService : IProfileService
     {
@@ -25,7 +24,8 @@ namespace JSHub.Service.Implementations
         {
             try
             {
-                var profile = _dbContext.Profiles.FirstOrDefault(p => p.UserId == userId);
+                var user = _dbContext.Users.Include(u => u.Profile).FirstOrDefault(u => u.Id == userId);
+                var profile = user.Profile;
                 if (profile == null) return new BaseResponse<ProfileViewModel>()
                 {
                     StatusCode = StatusCode.ProfileNotFound   

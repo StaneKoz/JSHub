@@ -17,12 +17,6 @@ ul {
     list-style-type: none;
 }
 
-.intro {
-   
-    background: url(/img/index-backgorund.png) no-repeat;
-}
-
 body {
     min-height: 100vh;
-    padding-top: 140px;
 }

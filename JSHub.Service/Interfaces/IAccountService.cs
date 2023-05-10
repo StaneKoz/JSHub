@@ -1,9 +1,8 @@
-﻿
-using JSHub.Domain.Response;
-using JSHub.Domain.ViewModels.Account;
+﻿using Portfolio.Domain.Response;
+using Portfolio.Domain.ViewModels.Account;
 using System.Security.Claims;
 
-namespace JSHub.Service.Interfaces
+namespace Portfolio.Service.Interfaces
 {
     public interface IAccountService
     {

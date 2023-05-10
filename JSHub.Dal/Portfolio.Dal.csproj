@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JSHub.Domain\JSHub.Domain.csproj" />
+    <ProjectReference Include="..\JSHub.Domain\Portfolio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

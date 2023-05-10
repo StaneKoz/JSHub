@@ -1,6 +1,6 @@
-﻿
-using JSHub.Domain.Enum;
-namespace JSHub.Domain.Response
+﻿using Portfolio.Domain.Enum;
+
+namespace Portfolio.Domain.Response
 {
     public class BaseResponse<T> : IBaseResponse<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace JSHub.Domain.Enum
+﻿namespace Portfolio.Domain.Enum
 {
     public enum StatusCode
     {

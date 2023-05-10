@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JSHub.Domain.ViewModels.Account
+namespace Portfolio.Domain.ViewModels.Account
 {
     public class LoginViewModel
     {

@@ -1,11 +1,11 @@
-﻿using JSHub.Dal.Interfaces;
-using JSHub.Dal.Repositories;
-using JSHub.Domain.Entity;
-using JSHub.Domain.Response;
-using JSHub.Service.Interfaces;
+﻿using Portfolio.Dal.Interfaces;
+using Portfolio.Dal.Repositories;
+using Portfolio.Domain.Entity;
+using Portfolio.Domain.Response;
+using Portfolio.Service.Interfaces;
 
-namespace JSHub.Service.Implementations
-{ using JSHub.Domain.Enum;
+namespace Portfolio.Service.Implementations
+{ using Portfolio.Domain.Enum;
     public class UserService : IUserService
     {
         private readonly IBaseRepository<User> _userRepository;

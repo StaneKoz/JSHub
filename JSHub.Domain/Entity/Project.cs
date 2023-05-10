@@ -1,5 +1,5 @@
 ﻿
-namespace JSHub.Domain.Entity
+namespace Portfolio.Domain.Entity
 {
     public class Project
     {

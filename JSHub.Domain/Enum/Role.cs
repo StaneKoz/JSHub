@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace JSHub.Domain.Entity
+namespace Portfolio.Domain.Entity
 {
     public enum Role
     {

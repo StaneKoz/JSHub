@@ -20,13 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JSHub.Dal\JSHub.Dal.csproj" />
-    <ProjectReference Include="..\JSHub.Domain\JSHub.Domain.csproj" />
-    <ProjectReference Include="..\JSHub.Service\JSHub.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\img\" />
+    <ProjectReference Include="..\JSHub.Dal\Portfolio.Dal.csproj" />
+    <ProjectReference Include="..\JSHub.Domain\Portfolio.Domain.csproj" />
+    <ProjectReference Include="..\JSHub.Service\Portfolio.Service.csproj" />
   </ItemGroup>
 
 </Project>

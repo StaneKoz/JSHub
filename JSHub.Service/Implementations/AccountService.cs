@@ -1,14 +1,14 @@
-﻿using JSHub.Dal.Interfaces;
-using JSHub.Domain.Entity;
-using JSHub.Domain.Enum;
-using JSHub.Domain.Helpers;
-using JSHub.Domain.Response;
-using JSHub.Domain.ViewModels.Account;
-using JSHub.Service.Interfaces;
+﻿using Portfolio.Dal.Interfaces;
+using Portfolio.Domain.Entity;
+using Portfolio.Domain.Enum;
+using Portfolio.Domain.Helpers;
+using Portfolio.Domain.Response;
+using Portfolio.Domain.ViewModels.Account;
+using Portfolio.Service.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 
-namespace JSHub.Service.Implementations
+namespace Portfolio.Service.Implementations
 {
     public class AccountService : IAccountService
     {

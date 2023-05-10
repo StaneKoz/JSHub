@@ -1,8 +1,8 @@
-﻿using JSHub.Domain.Entity;
+﻿using Portfolio.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace JSHub.Dal.ETG
+namespace Portfolio.Dal.ETG
 {
     public class ProjectEntityTypeConfiguration : IEntityTypeConfiguration<Project>
     {

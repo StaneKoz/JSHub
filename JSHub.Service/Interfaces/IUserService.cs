@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
-using JSHub.Domain.Entity;
-using JSHub.Domain.Response;
-using JSHub.Domain.ViewModels.Account;
+using Portfolio.Domain.Entity;
+using Portfolio.Domain.Response;
+using Portfolio.Domain.ViewModels.Account;
 
-namespace JSHub.Service.Interfaces
+namespace Portfolio.Service.Interfaces
 {
     public interface IUserService
     {

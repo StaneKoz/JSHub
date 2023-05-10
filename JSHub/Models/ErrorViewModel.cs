@@ -1,4 +1,4 @@
-namespace JSHub.Models
+namespace Portfolio.Models
 {
     public class ErrorViewModel
     {
