@@ -1,0 +1,42 @@
+﻿@using Portfolio.Domain.Enum;
+@model Portfolio.Domain.ViewModels.Profile.ProfileViewModel;
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout-main";
+}
+@section Links {
+    <link rel="stylesheet" href="~/css/Profile/Create.css" />
+    <link rel="stylesheet" href="~/css/Main Layout/white-header.css" />
+    <link rel="stylesheet" href="~/css/Main Layout/white-footer.css" />
+}
+<section class="create">
+    <div class="create-wrapper">
+        <h1 class="create-title">
+            Создание профиля
+        </h1>
+        <form autocomplete="off" asp-controller="Profile" asp-action="Create">
+            <div class="validation" asp-validation-summary="All"></div>
+            <div class="form-fields">
+                <div class="form-field">
+                    <input asp-for="FirstName" type="text" placeholder="Имя" />
+                </div>
+                <div class="form-field">
+                    <input asp-for="LastName" type="text" placeholder="Фамилия" />
+                </div>
+                <div class="form-field">
+                    <input asp-for="Age" type="text" placeholder="Возраст" />
+                </div>
+                <div class="form-field">
+                    <input asp-for="PhoneNumber" type="number" placeholder="Номер телефона" />
+                </div>
+                <div class="form-field">
+                    <p>Напишите немного о себе</p>
+                    <textarea asp-for="AboutMe"></textarea>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button class="button" type="submit">Создать профиль</button>
+            </div>
+        </form>
+    </div>
+</section>

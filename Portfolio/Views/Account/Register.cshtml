@@ -1,0 +1,43 @@
+﻿@model Portfolio.Domain.ViewModels.Account.RegisterViewModel;
+@{
+    Layout = "_Layout-main";
+}
+@section Links {
+    <link rel="stylesheet" href="~/css/Autorization/Registration.css" />
+    <link rel="stylesheet" href="~/css/Main Layout/white-header.css" />
+}
+<main>
+    <section class="register">
+        <div class="register-wrapper">
+            <div class="register-card register-content">
+                <p>Какой-то контент...</p>
+            </div>
+            <div class="register-card register-form">
+                <form asp-controller="Account" asp-action="Register" method="post">
+                    <h1 class="form-title">
+                        Регистрация
+                    </h1>
+                    <div class="validation" asp-validation-summary="All"></div>
+                    <div class="form-fields">
+                        <div class="form-field">
+                            <input asp-for="Email" type="text" placeholder="Почта" />
+                        </div>
+                        <div class="form-field">
+                            <input autocomplete="new-password" asp-for="Password" type="password" placeholder="Придумайте пароль" />
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="button" type="submit">Зарегистрироваться</button>
+                        <div class="divider">Уже есть аккаунт?</div>
+                        <div class="switch-authorisation">
+                            <a asp-controller="Account" asp-action="Login" class="button button-sign">
+                                <span>Войти</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+

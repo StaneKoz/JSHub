@@ -1,0 +1,161 @@
+﻿
+body {
+    background: #22292B;
+}
+
+footer {
+    display: none;
+}
+
+.project {
+    margin: 150px 0;
+}
+
+.project-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #CDCDCD;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.project-main-title {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-title {
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+    .project-title input {
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+        width: 300px;
+        font-size: 24px;
+        padding: 0 10px;
+    }
+
+.project-cover {
+    border: 4px dashed black;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.project-images__tools {
+    padding-bottom: 15px;
+}
+
+.tools-subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tools-buttons {
+}
+
+input[type=filea] {
+    display: none;
+}
+
+.btn {
+    border-radius: 5px;
+    background: #22292B;
+    color: #e3e3e3;
+    height: 45px;
+    border: none;
+    padding: 3px 25px;
+}
+
+    .btn:hover {
+        border: 2px solid #22292B;
+        color: #22292B;
+        background: #e3e3e3;
+    }
+
+.project-images__gallery {
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.gallery-image {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .gallery-image.removing {
+        transform: scale(0);
+        transition: transform 0.15s;
+    }
+
+    .gallery-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .gallery-image:hover .image-remove {
+        opacity: 0.9;
+    }
+
+    .gallery-image:hover .image-info {
+        bottom: 0px;
+    }
+
+.image-remove {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    background: #22292B;
+    opacity: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.22s;
+}
+
+.image-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    height: 25px;
+    font-size: 11px;
+    background: #22292B;
+    opacity: 0.9;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: bottom opacity 0.22s;
+}
+
+.project-create {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-create {
+    display: block;
+    font-size: 18px;
+}

@@ -1,0 +1,45 @@
+﻿@model Portfolio.Domain.ViewModels.Project.ProjectViewModel
+@{
+    ViewData["Title"] = "Create Project";
+    Layout = "_Layout-main";
+}
+
+@section Links {
+    <link rel="stylesheet" href="~/css/Project/Create.css" />
+    <link rel="stylesheet" href="~/css/Main Layout/white-header.css" />
+}
+
+@section Scripts {
+    <script type="module" src="~/js/app.js"></script>
+}
+<main>
+    <section class="project">
+        <div class="project-wrapper">
+            <form method="post" asp-controller="Project" asp-action="Create">
+            <h1 class="project-main-title">
+                Новый проект
+            </h1>
+            <div class="project-title">
+                <input type="text" placeholder="Название проекта..."/>
+            </div>
+            <div class="project-cover">
+                <input type="file" id="cover-upload" />
+            </div>
+            <div class="project-images">
+                <div class="project-images__tools">
+                    <h3 class="tools-subtitle">
+                        Добавьте изображения
+                    </h3>
+                    <div class="tools-buttons">
+                        <input type="file" id="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="project-create">
+                <input type="file" asp-for="Images" multiple />
+                <button class="btn btn-create"type="submit">Создать проект</button>
+            </div>
+            </form>
+        </div>
+    </section>
+</main>

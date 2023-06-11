@@ -1,0 +1,19 @@
+﻿/*Кнопки*/
+.swiper-button-prev::after {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    left: -5px;
+}
+
+.swiper-button-next::after {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    right: -5px;
+}
+
+.swiper {
+    box-sizing: border-box;
+    padding: 0 40px 45px 40px;
+}

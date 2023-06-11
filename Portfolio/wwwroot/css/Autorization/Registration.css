@@ -1,0 +1,152 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'El Messiri', sans-serif;
+    background: #22292B;
+}
+
+.footer {
+    display: none;
+}
+.register {
+    margin-top: 200px;
+}
+.register-wrapper {
+    max-width: 1280px;
+    margin: 100px auto 100px auto;
+    background: rgba(227, 227, 227, 0.25);
+    border-radius: 10px;
+    display: flex;
+    padding: 50px 50px 100px 50px;
+}
+
+.register-form {
+    width: 40%;
+    background: #CDCDCD;
+    border-radius: 5px;
+    padding: 20px 20px 30px 20px;
+}
+
+.register-content {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E3E3E3;
+}
+
+    .register-content p {
+        font-size: 20px;
+        color: #E3E3E3;
+    }
+
+.form-title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-fields {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+input {
+    font-size: 18px;
+    height: 55px;
+    width: 100%;
+    line-height: 16px;
+    border: 3px solid #22292B;
+    padding-left: 25px;
+    border-radius: 5px;
+    color: black;
+    background: #E3E3E3;
+}
+
+
+    input:focus {
+        border: 3px solid white;
+        outline: none;
+    }
+
+.form-field {
+    margin-bottom: 25px;
+}
+
+.form-buttons {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.button {
+    display: block;
+    height: 45px;
+    width: 100%;
+    background: #22292B;
+    color: #e3e3e3;
+    border: none;
+}
+
+    .button:hover {
+        color: #22292B;
+        background: #e3e3e3;
+        border: 2px solid #22292B;
+        border-radius: 2px;
+        font-weight: 500;
+    }
+
+.switch-authorisation {
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+}
+
+    .switch-authorisation a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        vertical-align: baseline;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .switch-authorisation a span {
+        }
+
+
+a.button {
+    text-decoration: none;
+}
+
+.divider {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 14px;
+    color: black;
+    text-align: center;
+    padding: 25px 0 25px 0;
+}
+
+.validation {
+    max-width: 90%;
+    margin: 0 auto;
+    color: orangered;
+    font-size: 16px;
+}
+
+    .validation ul {
+
+    }
+
+    .validation li {
+        list-style-type: circle;
+        margin-bottom: 10px;
+    }
